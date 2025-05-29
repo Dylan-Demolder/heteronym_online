@@ -1,5 +1,6 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
 import csv
 import random
 
@@ -19,6 +20,26 @@ puzzles = []
 with open("puzzles.csv", newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile)
     puzzles = list(reader)
+
+@app.get("/", response_class=HTMLResponse)
+def root():
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Heteronyms</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; }
+            input, button { padding: 10px; margin-top: 10px; font-size: 16px; }
+            .hint { margin-top: 10px; color: #555; }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to Heteronyms</h1>
+        <p>This is a word game where you're shown two clues — both are heteronyms and synonyms of a hidden answer.</p>
+    </body>
+    </html>
+    """
 
 @app.get("/puzzle")
 def get_puzzle():
