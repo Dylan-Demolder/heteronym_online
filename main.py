@@ -38,10 +38,6 @@ def root():
                 padding: 2rem;
                 text-align: center;
             }
-            .dark-mode {
-                background-color: #121212;
-                color: #f0f0f0;
-            }
             button {
                 padding: 10px 20px;
                 margin-top: 1rem;
@@ -56,12 +52,9 @@ def root():
         </style>
     </head>
     <body>
-        <div class=\"toggle\">
-            <button onclick=\"document.body.classList.toggle('dark-mode')\">🌓 Toggle Theme</button>
-        </div>
         <h1>Welcome to <em>Heteronym</em></h1>
         <p>A word puzzle where two heteronyms are clues to a hidden synonym.</p>
-        <p>To play the interactive version, visit <a href=\"https://heteronym-frontend.vercel.app\">heteronym-frontend.vercel.app</a></p>
+        <p>To play visit <a href=\"https://heteronym-frontend.vercel.app\">heteronym-frontend.vercel.app</a></p>
     </body>
     </html>
     """
