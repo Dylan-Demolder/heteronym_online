@@ -25,18 +25,43 @@ with open("puzzles.csv", newline='', encoding='utf-8') as csvfile:
 def root():
     return """
     <!DOCTYPE html>
-    <html>
+    <html lang=\"en\">
     <head>
-        <title>Heteronyms</title>
+        <meta charset=\"UTF-8\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+        <title>Heteronym</title>
         <style>
-            body { font-family: Arial, sans-serif; margin: 40px; }
-            input, button { padding: 10px; margin-top: 10px; font-size: 16px; }
-            .hint { margin-top: 10px; color: #555; }
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen;
+                background-color: #f0f0f0;
+                color: #222;
+                padding: 2rem;
+                text-align: center;
+            }
+            .dark-mode {
+                background-color: #121212;
+                color: #f0f0f0;
+            }
+            button {
+                padding: 10px 20px;
+                margin-top: 1rem;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            .toggle {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
         </style>
     </head>
     <body>
-        <h1>Welcome to Heteronyms</h1>
-        <p>This is a word game where you're shown two clues — both are heteronyms and synonyms of a hidden answer.</p>
+        <div class=\"toggle\">
+            <button onclick=\"document.body.classList.toggle('dark-mode')\">🌓 Toggle Theme</button>
+        </div>
+        <h1>Welcome to <em>Heteronym</em></h1>
+        <p>A word puzzle where two heteronyms are clues to a hidden synonym.</p>
+        <p>To play the interactive version, visit <a href=\"https://heteronym-frontend.vercel.app\">heteronym-frontend.vercel.app</a></p>
     </body>
     </html>
     """
