@@ -53,7 +53,7 @@ def root():
     </head>
     <body>
         <h1>Welcome to <em>Heteronym</em></h1>
-        <p>A word puzzle where two heteronyms are clues to a hidden synonym.</p>
+        <p>A word puzzle where two words are clues to a hidden synonym.</p>
         <p>To play visit <a href=\"https://heteronym-frontend.vercel.app\">heteronym-frontend.vercel.app</a></p>
     </body>
     </html>
